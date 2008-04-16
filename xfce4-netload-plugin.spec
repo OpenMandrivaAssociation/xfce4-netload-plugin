@@ -1,11 +1,12 @@
 Summary:	Netload plugin for the Xfce panel
 Name:		xfce4-netload-plugin
 Version:	0.4.0
-Release:	%mkrel 6
+Release:	%mkrel 7
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-netload-plugin
 Source0:	http://goodies.xfce.org/releases/xfce4-netload-plugin/%{name}-%{version}.tar.bz2
+Patch0:		01_fix-bar-colors.patch
 Requires:	xfce4-panel >= 4.4.2
 BuildRequires:	xfce4-panel-devel >= 4.4.2
 BuildRequires:	perl(XML::Parser)
@@ -17,6 +18,7 @@ A netload panel plugin for the Xfce Desktop Environment.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %configure2_5x
