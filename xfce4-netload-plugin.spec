@@ -1,7 +1,7 @@
 Summary:	Netload plugin for the Xfce panel
 Name:		xfce4-netload-plugin
 Version:	0.4.0
-Release:	%mkrel 8
+Release:	%mkrel 9
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-netload-plugin
@@ -21,6 +21,9 @@ A netload panel plugin for the Xfce Desktop Environment.
 %patch0 -p0
 
 %build
+%define Werror_cflags %nil
+%define _disable_ld_as_needed 1
+
 %configure2_5x
 %make
 
