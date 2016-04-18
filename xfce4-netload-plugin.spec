@@ -1,9 +1,10 @@
 %define url_ver %(echo %{version} | cut -c 1-3)
+%define _disable_rebuild_configure 1
 
 Summary:	Netload plugin for the Xfce panel
 Name:		xfce4-netload-plugin
-Version:	1.2.0
-Release:	4
+Version:	1.2.4
+Release:	0.1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-netload-plugin
@@ -23,7 +24,7 @@ A netload panel plugin for the Xfce Desktop Environment.
 %build
 %define Werror_cflags %nil
 
-%configure2_5x
+%configure
 %make
 
 %install
@@ -33,6 +34,6 @@ A netload panel plugin for the Xfce Desktop Environment.
 
 %files -f %{name}.lang
 %doc README ChangeLog AUTHORS
-%{_libdir}/xfce4/panel-plugins/*
+%{_libdir}/xfce4/panel/plugins/libnetload.so
 %{_datadir}/xfce4/panel-plugins/*
 %{_iconsdir}/hicolor/*/apps/*.*g
