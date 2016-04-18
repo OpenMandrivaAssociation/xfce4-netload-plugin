@@ -1,4 +1,5 @@
 %define url_ver %(echo %{version} | cut -c 1-3)
+%define _disable_rebuild_configure 1
 
 Summary:	Netload plugin for the Xfce panel
 Name:		xfce4-netload-plugin
@@ -33,6 +34,6 @@ A netload panel plugin for the Xfce Desktop Environment.
 
 %files -f %{name}.lang
 %doc README ChangeLog AUTHORS
-%{_libdir}/xfce4/panel-plugins/*
+%{_libdir}/xfce4/panel/plugins/libnetload.so
 %{_datadir}/xfce4/panel-plugins/*
 %{_iconsdir}/hicolor/*/apps/*.*g
