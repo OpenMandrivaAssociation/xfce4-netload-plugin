@@ -3,13 +3,13 @@
 
 Summary:	Netload plugin for the Xfce panel
 Name:		xfce4-netload-plugin
-Version:	1.3.1
+Version:	1.3.2
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/Xfce
 URL:		http://goodies.xfce.org/projects/panel-plugins/xfce4-netload-plugin
 Source0:	http://archive.xfce.org/src/panel-plugins/xfce4-netload-plugin/%{url_ver}/%{name}-%{version}.tar.bz2
-Requires:	xfce4-panel >= 4.7
+Requires:	xfce4-panel
 BuildRequires:	pkgconfig(libxfce4panel-2.0)
 BuildRequires:	perl(XML::Parser)
 BuildRequires:	pkgconfig(libxfce4ui-2)
@@ -25,10 +25,10 @@ A netload panel plugin for the Xfce Desktop Environment.
 %define Werror_cflags %nil
 
 %configure
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %find_lang %{name} %{name}.lang
 
